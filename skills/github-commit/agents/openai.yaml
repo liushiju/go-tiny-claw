@@ -1,7 +1,0 @@
-interface:
-  display_name: "GitHub 提交"
-  short_description: "按规范检查、提交并推送 git 改动"
-  default_prompt: "Use $github-commit to review the staged diff, generate a Conventional Commits message draft, create a clean commit, and push only if requested."
-
-policy:
-  allow_implicit_invocation: true
