@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/liushiju/go-tiny-claw/internal/schema"
 	"github.com/openai/openai-go/v3"
@@ -20,7 +21,7 @@ type OpenAIProvider struct {
 
 // NewZhipuOpenAIProvider 构造函数：基于 OpenAI V3 SDK，指向智谱底座
 func NewZhipuOpenAIProvider(model string) *OpenAIProvider {
-	apiKey := os.Getenv("ZHIPU_API_KEY")
+	apiKey := strings.TrimSpace(os.Getenv("ZHIPU_API_KEY"))
 	if apiKey == "" {
 		panic("请设置 ZHIPU_API_KEY 环境变量")
 	}
